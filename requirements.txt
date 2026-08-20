@@ -1,4 +1,2 @@
 streamlit
 numpy
-Pillow
-streamlit-drawable-canvas
