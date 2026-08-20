@@ -59,30 +59,5 @@ with col2:
 
 st.divider()
 
-# 보드 그리기
+# 보드 그리기 (사과 이모지 추가)
 for r in range(ROWS):
-    cols = st.columns(COLS)
-    for c in range(COLS):
-        value = st.session_state.board[r, c]
-        key = f"btn_{r}_{c}"
-
-        if value == 0:
-            cols[c].button(" ", key=key, disabled=True)
-        else:
-            is_selected = (r, c) in st.session_state.selected
-            label = f"**{value}**" if is_selected else str(value)
-
-            if cols[c].button(label, key=key):
-                if is_selected:
-                    st.session_state.selected.discard((r, c))
-                else:
-                    st.session_state.selected.add((r, c))
-                st.rerun()
-
-st.divider()
-st.markdown("""
-**조작법**  
-1. 숫자를 클릭해서 선택/해제  
-2. 합이 10이 되면 **제거하기** 버튼 누르기  
-3. 최대한 많은 사과를 없애보세요!
-""")
