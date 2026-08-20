@@ -38,26 +38,4 @@ st.write(f"**현재 선택된 합:** `{selected_sum}`")
 # 버튼들
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("✅ 제거하기 (합이 10일 때)", use_container_width=True, type="primary"):
-        if selected_sum == 10 and len(st.session_state.selected) > 0:
-            count = 0
-            for r, c in list(st.session_state.selected):
-                if st.session_state.board[r, c] > 0:
-                    st.session_state.board[r, c] = 0
-                    count += 1
-            st.session_state.score += count
-            st.session_state.selected = set()
-            st.success(f"+{count}점!")
-            st.rerun()
-        else:
-            st.warning("합이 정확히 10이 아니에요!")
-
-with col2:
-    if st.button("선택 취소", use_container_width=True):
-        st.session_state.selected = set()
-        st.rerun()
-
-st.divider()
-
-# 보드 그리기 (사과 이모지 추가)
-for r in range(ROWS):
+    if
